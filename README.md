@@ -1,2 +1,2 @@
 # README #
-Obi won Yoh
+Obi Flexbox based light-weight grid framework
