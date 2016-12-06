@@ -18,6 +18,7 @@
   "homepage": "https://github.com/cahbb/Obi",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^2.0.13",
     "gulp-rename": "^1.2.2",
     "gulp-rimraf": "^0.2.0",

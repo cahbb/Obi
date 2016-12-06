@@ -9,13 +9,13 @@ body, html {
     height: 100%;
 }
 
-.red , .blue{
+.column {
     background-color: tomato;
     height: 50px;
     padding: 10px;
-    /*flex-grow: 0.4;*/
     text-align: center;
-}
-.blue {
-    background-color: DarkBlue;
+
+    &:nth-child(2n+1) {
+        background-color: DarkBlue;    
+    }
 }

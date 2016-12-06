@@ -3,3 +3,17 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+.row {
+	display: flex;
+	flex-flow: row wrap;
+	// align-items: center;
+	// justify-content: center;
+
+	.column {
+		flex-grow: 1;
+
+		$width: 0%;
+		@for $i from 0 through 100 {&.sm#{$i}{ width:$width+$i;flex:none;flex-grow:0; } }
+	}
+}
