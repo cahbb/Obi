@@ -1,0 +1,490 @@
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+@import "bootstrap/normalize";
+@import "bootstrap/print";
+
+@import "bootstrap/scaffolding";
+@import "bootstrap/type";
+@import "bootstrap/code";
+@import "bootstrap/grid";
+@import "bootstrap/tables";
+@import "bootstrap/forms";
+@import "bootstrap/buttons";
+@import "bootstrap/responsive-utilities";
+
+@import "vars.scss";
+@import "mouse.scss";
+
+
+body {
+	-webkit-font-smoothing: antialiased;
+	color: $black;
+	background-color: $white;
+}
+ 
+h1, h3 {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 700;
+	letter-spacing: 0.03em;
+	color: $brown;
+}
+
+.overlay {
+	display: none;
+	background-color: rgba(255,255,255,0.9);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 999999;
+
+	.pop-up {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		h3 {
+			color: $dark-green;
+
+			&.error {
+				color: $error-red;
+			}
+		}
+	}
+}
+
+.no-break {
+	white-space: nowrap;
+}
+
+.hero {
+	font-size: 24px;
+	margin-top: 0;
+
+}
+
+@media (min-width: 768px) {
+	.pr {
+		padding-right: 30px;
+	}
+
+	.pl {
+		padding-left: 30px;
+	}
+
+	.pb {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+}
+
+.content {
+	transition: all .3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+a {
+	color: $white;
+	border-bottom: 1px solid $blue;
+	transition: all .3s cubic-bezier(0.65, 0.05, 0.36, 1);
+	cursor: pointer;
+
+	&:hover, &:focus {
+		text-decoration: none;
+		color: $white;
+		padding-bottom: 3px;
+	}
+}
+
+.wow {
+	opacity: 0;
+} 
+
+.form-control {
+    height: 36px;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: transparent;
+    box-shadow: none;
+    color: $black;
+    font-family: 'Titillium Web', sans-serif;
+	font-weight: 600;
+	letter-spacing: 0.03em;	
+	font-size: 16px;
+	padding-left: 0;
+
+	&:focus {
+		outline: none;
+		box-shadow: none;
+		border-color: #e5e5e5;
+	}
+}
+
+.vam-r {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.vam-a {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.preserve {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.align-middle {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}	
+
+
+h3 {
+	font-size: 24px;
+	margin-top: 0;
+	line-height: 1.28em;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+p {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 600;
+	letter-spacing: 0.03em;	
+	font-size: 14px;
+	line-height: 1.75em;
+	margin-bottom: 0;
+}
+
+.btn {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 700;
+	letter-spacing: 0.03em;	
+	font-size: 14px;
+	border: none;
+	border-radius: 50px;
+	padding: 10px 40px 11px 40px;
+	text-transform: uppercase;
+	transition: all .3s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+	&:focus, &:hover, &:active:focus {
+		outline: none;
+		color: $white;
+	}
+}
+
+.btn-success {
+	transition: all .3s cubic-bezier(0.65, 0.05, 0.36, 1);
+	
+	background: #017050;
+	background: -moz-linear-gradient(top,  #017050 0%, #026045 100%);
+	background: -webkit-linear-gradient(top,  #017050 0%,#026045 100%);
+	background: linear-gradient(to bottom,  #017050 0%,#026045 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#017050', endColorstr='#026045',GradientType=0 );
+
+	&:focus, &:hover, &:active:focus {
+		
+		background: #026045;
+		background: -moz-linear-gradient(top,  #026045 0%, #017050 100%);
+		background: -webkit-linear-gradient(top,  #026045 0%,#017050 100%);
+		background: linear-gradient(to bottom,  #026045 0%,#017050 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#026045', endColorstr='#017050',GradientType=0 );
+
+		outline: none;
+		color: $white;
+	}
+}
+
+.h100 {
+	height: 100%;
+}
+
+.divider {
+	height: 1px;
+	background-color: #e5e5e5;
+	width: 100%;
+}
+
+.module {
+	background-color: $white;
+	padding-top: 112px;
+	padding-bottom: 170px;
+}
+@media (max-width: 767px) {
+	.module {
+		padding-top: 82px;
+		padding-bottom: 110px;
+	}    
+}
+
+.logo {
+	position: fixed;
+	z-index: 99999;
+	left: 30px;
+	top: 30px;
+	width: 70px;
+	cursor: pointer;
+
+	img {
+		width: 100%;
+	}
+}
+
+.to-contact {
+	position: fixed;
+	z-index: 99999;
+	right: 20px;
+	bottom: 20px;
+
+	width: 40px;
+	height: 40px;
+	border-radius: 100%;
+	background-color: $dark-green;
+	cursor: pointer;
+
+	img {
+		width: 18px;
+	    position: absolute;
+	    top: 9px;
+	    left: 11px;
+
+		animation-duration: 1.1s;
+		-webkit-animation-duration: 1.1s;
+	}
+}
+
+@media (max-width: 767px) {
+	.to-contact {
+		position: fixed;
+		z-index: 99;
+		right: 15px;
+		bottom: 15px;
+
+		width: 45px;
+		height: 45px;
+		border-radius: 100%;
+		background-color: $dark-green;
+		cursor: pointer;
+
+		img {
+			width: 19px;
+			position: absolute;
+			top: 11px;
+			left: 12px;
+
+			animation-duration: 1.1s;
+			-webkit-animation-duration: 1.1s;
+		}
+	}	
+}
+
+.blur {
+	filter: blur(4px);
+}
+
+
+// ==============================================================
+// ==============================================================
+// ==============================================================
+// ==============================================================
+// #MENU
+
+.menu {
+	position: absolute;
+	top: calc(100% + 1px);
+	background-color: $white;
+	width: 100%;
+	height: 65px;
+	z-index: 9999;
+
+	img {
+		width: 45px;
+		margin-top: 15px;
+		margin-left: 30px;
+	}
+}
+
+.fix {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+
+
+
+
+
+// ==============================================================
+// ==============================================================
+// ==============================================================
+// ==============================================================
+// #LANDING
+
+#index {
+	img {
+		width: 100%;
+	}
+}
+
+
+// ==============================================================
+// ==============================================================
+// ==============================================================
+// ==============================================================
+// #products
+
+#products {
+	h1 {
+		margin-bottom: 20px;
+	}
+	.btn {
+		margin-top: 37px;
+	}
+}
+
+
+@media (max-width: 767px) {
+	.product:nth-child(2) {
+		margin-top: 54px;
+	}    
+}
+
+
+// ==============================================================
+// ==============================================================
+// ==============================================================
+// ==============================================================
+// #ABOUT
+
+
+
+#about {
+	h1 {
+		margin-bottom: 20px;
+	}
+
+	img {
+		border-radius: 100%;
+		margin-bottom: 55px;
+	}
+}
+
+@media (max-width: 767px) {
+	.about:nth-child(2) {
+		margin-top: 47px;
+	}    
+}
+
+
+// ==============================================================
+// ==============================================================
+// ==============================================================
+// ==============================================================
+// #GET AN INVITE
+
+.placeholder {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 700;
+	font-size: 13px;
+	transition: all .3s cubic-bezier(0.65, 0.05, 0.36, 1);
+	color: $dark-green;
+}
+
+input {
+	transition: all .3s cubic-bezier(0.65, 0.05, 0.36, 1);
+
+	&.notValid {
+		border-color: $error-red;		
+		color: $error-red;		
+	}
+}
+
+form label {
+	font-size: 13px;
+	color: $error-red;
+	font-family: 'Titillium Web', sans-serif;
+}
+
+
+#get-in-touch {
+	.forms {
+		margin-top: 17px;
+		margin-bottom: 10px;
+
+		.format-placeholder {
+			margin-bottom: 25px;
+		}
+	}
+
+	h1 {
+		margin-bottom: 20px;
+	}
+
+	.btn {
+		margin-top: 19px;
+	}
+}
+
+
+
+
+
+// ==============================================================
+// ==============================================================
+// ==============================================================
+// ==============================================================
+// #FOOTER
+
+#footer {
+	padding-top: 60px;
+    padding-bottom: 84px;
+
+	h1 {
+		margin-bottom: 20px;
+	}
+
+	p {
+		font-size: 14px;
+	}
+
+	img {
+		width: 60px;
+	}
+
+	.btn {
+	    position: relative;
+    	top: 14px;
+	}
+}
+
+@media (max-width: 767px) {
+	.text {
+		margin-top: 48px;
+	}
+
+	.newsletter {
+		margin-top: 48px;
+	}    
+}
+
+
+
+
+
+
+
+
+
+
+

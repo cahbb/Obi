@@ -1,0 +1,27 @@
+body, html {
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    background-color: #313af3;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.red , .blue{
+    background-color: tomato;
+    height: 50px;
+    padding: 10px;
+    /*flex-grow: 0.4;*/
+    text-align: center;
+}
+.blue {
+    background-color: DarkBlue;
+}
