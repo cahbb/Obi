@@ -1,10 +1,301 @@
-// Colors
 
-$black-blue: #1b1d22;
-$blue: #313af3;
-$white: #fff;
-$black: #1d1d1d;
-$error-red: #ee3543;
-$green: #5cb85c;
-$brown: #c09974;
-$dark-green: #017050;
+
+
+$gutter: 15px; // Optional
+
+
+
+//------------------------------------------------------------------------------
+
+
+
+$xl_from: 1600px;
+$lg_from: 1200px;	$lg_to: 1599px;
+$md_from:  769px;	$md_to: 1199px;
+$sm_from:  500px;	$sm_to:  768px;
+					$xs_to:  499px;
+
+
+
+//------------------------------------------------------------------------------
+
+
+
+.flex-row {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+
+	// Rows vertical -------------
+	&.column {
+		flex-flow: column wrap;
+	}
+
+	// Fallback positioning -------------
+	&.xs-center            { align-items: center;justify-content: center; }
+	&.xs-horizontal-center { justify-content: center; }
+	&.xs-vertical-center   { align-items: center; }
+	&.xs-stretch           { justify-content: stretch; }
+	&.xs-left              { justify-content: flex-start; }
+	&.xs-right             { justify-content: flex-end; }
+	&.xs-top               { align-items: flex-start; }
+	&.xs-bottom            { align-items: flex-end; }
+
+	&.sm-center            { align-items: center;justify-content: center; }
+	&.sm-horizontal-center { justify-content: center; }
+	&.sm-vertical-center   { align-items: center; }
+	&.sm-stretch           { justify-content: stretch; }
+	&.sm-left              { justify-content: flex-start; }
+	&.sm-right             { justify-content: flex-end; }
+	&.sm-top               { align-items: flex-start; }
+	&.sm-bottom            { align-items: flex-end; }
+
+	&.md-center            { align-items: center;justify-content: center; }
+	&.md-horizontal-center { justify-content: center; }
+	&.md-vertical-center   { align-items: center; }
+	&.md-stretch           { justify-content: stretch; }
+	&.md-left              { justify-content: flex-start; }
+	&.md-right             { justify-content: flex-end; }
+	&.md-top               { align-items: flex-start; }
+	&.md-bottom            { align-items: flex-end; }
+
+	&.lg-center            { align-items: center;justify-content: center; }
+	&.lg-horizontal-center { justify-content: center; }
+	&.lg-vertical-center   { align-items: center; }
+	&.lg-stretch           { justify-content: stretch; }
+	&.lg-left              { justify-content: flex-start; }
+	&.lg-right             { justify-content: flex-end; }
+	&.lg-top               { align-items: flex-start; }
+	&.lg-bottom            { align-items: flex-end; }
+
+	&.xl-center            { align-items: center;justify-content: center; }
+	&.xl-horizontal-center { justify-content: center; }
+	&.xl-vertical-center   { align-items: center; }
+	&.xl-stretch           { justify-content: stretch; }
+	&.xl-left              { justify-content: flex-start; }
+	&.xl-right             { justify-content: flex-end; }
+	&.xl-top               { align-items: flex-start; }
+	&.xl-bottom            { align-items: flex-end; }
+
+	// Child styling -------------
+	.item {
+		$width: 0%;
+		min-height: 1px;
+		display: block;
+		
+		// Generate fallback width -------------
+		@for $i from 0 through 100 { &.xs-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
+		@for $i from 0 through 100 { &.sm-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
+		@for $i from 0 through 100 { &.md-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
+		@for $i from 0 through 100 { &.lg-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
+		@for $i from 0 through 100 { &.xl-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
+
+		// Generate fallback order classes -------------
+		@for $i from 0 through 5 { &.xs-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 5 { &.sm-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 5 { &.md-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 5 { &.lg-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 5 { &.xl-order-#{$i}{ order: $i; }}
+
+		// Fallback self positioning classes -------------
+		&.xs-top     { align-self: flex-start; }
+		&.xs-bottom  { align-self: flex-end; }
+		&.xs-center  { align-self: center; }
+		&.xs-stretch { align-self: stretch; }
+
+		&.sm-top     { align-self: flex-start; }
+		&.sm-bottom  { align-self: flex-end; }
+		&.sm-center  { align-self: center; }
+		&.sm-stretch { align-self: stretch; }
+
+		&.md-top     { align-self: flex-start; }
+		&.md-bottom  { align-self: flex-end; }
+		&.md-center  { align-self: center; }
+		&.md-stretch { align-self: stretch; }
+
+		&.lg-top     { align-self: flex-start; }
+		&.lg-bottom  { align-self: flex-end; }
+		&.lg-center  { align-self: center; }
+		&.lg-stretch { align-self: stretch; }
+
+		&.xl-top     { align-self: flex-start; }
+		&.xl-bottom  { align-self: flex-end; }
+		&.xl-center  { align-self: center; }
+		&.xl-stretch { align-self: stretch; }
+	}
+}
+
+
+
+//------------------------------------------------------------------------------
+
+
+
+// xs/x-small (smartphone) -------------
+@media (max-width: $xs_to) {
+	.flex-row {
+		&.xs-center            { align-items: center;justify-content: center; }
+		&.xs-horizontal-center { justify-content: center; }
+		&.xs-vertical-center   { align-items: center; }
+		&.xs-stretch           { justify-content: stretch; }
+		&.xs-left              { justify-content: flex-start; }
+		&.xs-right             { justify-content: flex-end; }
+		&.xs-top               { align-items: flex-start; }
+		&.xs-bottom            { align-items: flex-end; }
+
+		.item { $width: 0%; min-height: 1px;
+
+			// hide/show -------------
+			&.xs-hide { display:none !important; }
+			&.xs-show { display:block !important; }
+
+			// Generates widths -------------
+			@for $i from 0 through 100 { &.xs-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
+
+			// Generates orders -------------
+			@for $i from 0 through 5 { &.xs-order-#{$i}{ order: $i; }}
+
+			// Size specific self-positioning -------------
+			&.xs-top     { align-self: flex-start; }
+			&.xs-bottom  { align-self: flex-end; }
+			&.xs-center  { align-self: center; }
+			&.xs-stretch { align-self: stretch; }
+		}
+	}
+}
+
+
+// sm/small (tablet) -------------
+@media (min-width:$sm_from) and (max-width: $sm_to) {
+	.flex-row {
+		&.sm-center            { align-items: center;justify-content: center; }
+		&.sm-horizontal-center { justify-content: center; }
+		&.sm-vertical-center   { align-items: center; }
+		&.sm-stretch           { justify-content: stretch; }
+		&.sm-left              { justify-content: flex-start; }
+		&.sm-right             { justify-content: flex-end; }
+		&.sm-top               { align-items: flex-start; }
+		&.sm-bottom            { align-items: flex-end; }
+
+		.item { $width: 0%; min-height: 1px;
+
+			// hide/show -------------
+			&.sm-hide { display:none !important; }
+			&.sm-show { display:block !important; }
+
+			// Generates widths -------------
+			@for $i from 0 through 100 { &.sm-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
+
+			// Generates orders -------------
+			@for $i from 0 through 5 { &.sm-order-#{$i}{ order: $i; }}
+
+			// Size specific self-positioning -------------
+			&.sm-top     { align-self: flex-start; }
+			&.sm-bottom  { align-self: flex-end; }
+			&.sm-center  { align-self: center; }
+			&.sm-stretch { align-self: stretch; }
+		}
+	}
+}
+
+
+// md/medium (tablet/desktop) -------------
+@media (min-width:$md_from) and (max-width: $md_to) {
+	.flex-row {
+		&.md-center            { align-items: center;justify-content: center; }
+		&.md-horizontal-center { justify-content: center; }
+		&.md-vertical-center   { align-items: center; }
+		&.md-stretch           { justify-content: stretch; }
+		&.md-left              { justify-content: flex-start; }
+		&.md-right             { justify-content: flex-end; }
+		&.md-top               { align-items: flex-start; }
+		&.md-bottom            { align-items: flex-end; }
+
+		.item { $width: 0%; min-height: 1px;
+
+			// hide/show -------------
+			&.md-hide { display:none !important; }
+			&.md-show { display:block !important; }
+
+			// Generates widths -------------
+			@for $i from 0 through 100 { &.md-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
+
+			// Generates orders -------------
+			@for $i from 0 through 5 { &.md-order-#{$i}{ order: $i; }}
+
+			// Size specific self-positioning -------------
+			&.md-top     { align-self: flex-start; }
+			&.md-bottom  { align-self: flex-end; }
+			&.md-center  { align-self: center; }
+			&.md-stretch { align-self: stretch; }
+		}
+	}
+}
+
+
+// lg/large (desktop) -------------
+@media (min-width: $lg_from) and (max-width: $lg_to) {
+	.flex-row {
+		&.lg-center            { align-items: center;justify-content: center; }
+		&.lg-horizontal-center { justify-content: center; }
+		&.lg-vertical-center   { align-items: center; }
+		&.lg-stretch           { justify-content: stretch; }
+		&.lg-left              { justify-content: flex-start; }
+		&.lg-right             { justify-content: flex-end; }
+		&.lg-top               { align-items: flex-start; }
+		&.lg-bottom            { align-items: flex-end; }
+
+		.item { $width: 0%; min-height: 1px;
+
+			// hide/show -------------
+			&.lg-hide { display:none !important; }
+			&.lg-show { display:block !important; }
+
+			// Generates widths -------------
+			@for $i from 0 through 100 { &.lg-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
+
+			// Generates orders -------------
+			@for $i from 0 through 5 { &.lg-order-#{$i}{ order: $i; }}
+
+			// Size specific self-positioning -------------
+			&.lg-top     { align-self: flex-start; }
+			&.lg-bottom  { align-self: flex-end; }
+			&.lg-center  { align-self: center; }
+			&.lg-stretch { align-self: stretch; }
+		}
+	}
+}
+
+
+// xl/x-large (desktop) -------------
+@media (min-width: $xl_from) {
+	.flex-row {
+		&.xl-center            { align-items: center;justify-content: center; }
+		&.xl-horizontal-center { justify-content: center; }
+		&.xl-vertical-center   { align-items: center; }
+		&.xl-stretch           { justify-content: stretch; }
+		&.xl-left              { justify-content: flex-start; }
+		&.xl-right             { justify-content: flex-end; }
+		&.xl-top               { align-items: flex-start; }
+		&.xl-bottom            { align-items: flex-end; }
+
+		.item { $width: 0%; min-height: 1px;
+
+			// hide/show -------------
+			&.xl-hide { display:none !important; }
+			&.xl-show { display:block !important; }
+
+			// Generates widths -------------
+			@for $i from 0 through 100 { &.xl-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
+
+			// Generates orders -------------
+			@for $i from 0 through 5 { &.xl-order-#{$i}{ order: $i; }}
+
+			// Size specific self-positioning -------------
+			&.xl-top     { align-self: flex-start; }
+			&.xl-bottom  { align-self: flex-end; }
+			&.xl-center  { align-self: center; }
+			&.xl-stretch { align-self: stretch; }
+		}
+	}
+}

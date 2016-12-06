@@ -1,30 +1,27 @@
 {
-  "name": "jacee-app",
+  "name": "Obi",
   "version": "1.0.0",
-  "description": "jacee-app",
+  "description": "Obi Flexbox based light-weight grid framework",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://cahbb@bitbucket.org/jacee/jacee-app.git"
+    "url": "git+https://github.com/cahbb/Obi.git"
   },
   "keywords": [
-    "static",
-    "website"
+    "framework"
   ],
-  "author": "Jacee",
+  "author": "cahbb",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/jacee/jacee-app#readme",
+  "homepage": "https://github.com/cahbb/Obi",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^2.0.13",
-    "gulp-concat": "^2.6.0",
     "gulp-rename": "^1.2.2",
     "gulp-rimraf": "^0.2.0",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^2.1.1",
-    "gulp-uglify": "^2.0.0"
+    "gulp-sass": "^2.3.2"
   }
 }
