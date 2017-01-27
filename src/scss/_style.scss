@@ -1,3 +1,9 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 body, html {
     height: 100%;
     font-family: "Montserrat", sans-serif;
@@ -9,11 +15,11 @@ body, html {
     height: 100%;
 }
 
-.column {
+.item {
     background-color: tomato;
-    height: 50px;
     padding: 10px;
     text-align: center;
+    // height: 50px;
 
     &:nth-child(2n+1) {
         background-color: DarkBlue;    
