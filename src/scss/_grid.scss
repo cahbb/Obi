@@ -1,4 +1,5 @@
 
+
 $xl_from: 1600px;
 $lg_from: 1200px;	$lg_to: 1599px;
 $md_from:  769px;	$md_to: 1199px;
@@ -7,82 +8,237 @@ $sm_from:  500px;	$sm_to:  768px;
 
 
 
-.flex { display: flex;flex-flow: row wrap;
+.flex-row {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
 
-	&.center { align-items: center;justify-content: center; }
-	&.horizontal-center { justify-content: center; }
-	&.vertical-center { align-items: center; }
-	&.stretch { justify-content: stretch; }
-	&.left { justify-content: flex-start; }
-	&.right { justify-content: flex-end; }
-	&.top { align-items: flex-start; }
-	&.bottom { align-items: flex-end; }
+	&.column {
+		flex-flow: column wrap;
+	}
 
-	.item { $width: 0%;
+	&.xs-center { align-items: center;justify-content: center; }
+	&.xs-horizontal-center { justify-content: center; }
+	&.xs-vertical-center { align-items: center; }
+	&.xs-stretch { justify-content: stretch; }
+	&.xs-left { justify-content: flex-start; }
+	&.xs-right { justify-content: flex-end; }
+	&.xs-top { align-items: flex-start; }
+	&.xs-bottom { align-items: flex-end; }
 
-		@for $i from 0 through 100 { &.xs#{$i}{ flex-basis:$width+$i; }}
-		@for $i from 0 through 100 { &.sm#{$i}{ flex-basis:$width+$i; }}
-		@for $i from 0 through 100 { &.md#{$i}{ flex-basis:$width+$i; }}
-		@for $i from 0 through 100 { &.lg#{$i}{ flex-basis:$width+$i; }}
-		@for $i from 0 through 100 { &.xl#{$i}{ flex-basis:$width+$i; }}
+	&.sm-center { align-items: center;justify-content: center; }
+	&.sm-horizontal-center { justify-content: center; }
+	&.sm-vertical-center { align-items: center; }
+	&.sm-stretch { justify-content: stretch; }
+	&.sm-left { justify-content: flex-start; }
+	&.sm-right { justify-content: flex-end; }
+	&.sm-top { align-items: flex-start; }
+	&.sm-bottom { align-items: flex-end; }
 
-		&.top { align-self: flex-start; }
-		&.bottom { align-self: flex-end; }
-		&.center { align-self: center; }
-		&.stretch { align-self: stretch; }
+	&.md-center { align-items: center;justify-content: center; }
+	&.md-horizontal-center { justify-content: center; }
+	&.md-vertical-center { align-items: center; }
+	&.md-stretch { justify-content: stretch; }
+	&.md-left { justify-content: flex-start; }
+	&.md-right { justify-content: flex-end; }
+	&.md-top { align-items: flex-start; }
+	&.md-bottom { align-items: flex-end; }
+
+	&.lg-center { align-items: center;justify-content: center; }
+	&.lg-horizontal-center { justify-content: center; }
+	&.lg-vertical-center { align-items: center; }
+	&.lg-stretch { justify-content: stretch; }
+	&.lg-left { justify-content: flex-start; }
+	&.lg-right { justify-content: flex-end; }
+	&.lg-top { align-items: flex-start; }
+	&.lg-bottom { align-items: flex-end; }
+
+	&.xl-center { align-items: center;justify-content: center; }
+	&.xl-horizontal-center { justify-content: center; }
+	&.xl-vertical-center { align-items: center; }
+	&.xl-stretch { justify-content: stretch; }
+	&.xl-left { justify-content: flex-start; }
+	&.xl-right { justify-content: flex-end; }
+	&.xl-top { align-items: flex-start; }
+	&.xl-bottom { align-items: flex-end; }
+
+	.item { $width: 0%; min-height: 1px; display: block;
+
+		@for $i from 0 through 100 { &.xs-#{$i}{ flex: 0 0 $width+$i; }}
+		@for $i from 0 through 100 { &.sm-#{$i}{ flex: 0 0 $width+$i; }}
+		@for $i from 0 through 100 { &.md-#{$i}{ flex: 0 0 $width+$i; }}
+		@for $i from 0 through 100 { &.lg-#{$i}{ flex: 0 0 $width+$i; }}
+		@for $i from 0 through 100 { &.xl-#{$i}{ flex: 0 0 $width+$i; }}
+
+
+		@for $i from 0 through 15 { &.xs-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 15 { &.sm-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 15 { &.md-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 15 { &.lg-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 15 { &.xl-order-#{$i}{ order: $i; }}
+
+		&.xs-top { align-self: flex-start; }
+		&.xs-bottom { align-self: flex-end; }
+		&.xs-center { align-self: center; }
+		&.xs-stretch { align-self: stretch; }
+
+		&.sm-top { align-self: flex-start; }
+		&.sm-bottom { align-self: flex-end; }
+		&.sm-center { align-self: center; }
+		&.sm-stretch { align-self: stretch; }
+
+		&.md-top { align-self: flex-start; }
+		&.md-bottom { align-self: flex-end; }
+		&.md-center { align-self: center; }
+		&.md-stretch { align-self: stretch; }
+
+		&.lg-top { align-self: flex-start; }
+		&.lg-bottom { align-self: flex-end; }
+		&.lg-center { align-self: center; }
+		&.lg-stretch { align-self: stretch; }
+
+		&.xl-top { align-self: flex-start; }
+		&.xl-bottom { align-self: flex-end; }
+		&.xl-center { align-self: center; }
+		&.xl-stretch { align-self: stretch; }
 	}
 }
 
 
 
 @media (max-width: $xs_to) {
-	.hide-xs{display:none !important;}
-	.show-xs{display:block !important;}
-	.show-inline-xs{display:inline !important;}
-	.show-inline-xs{display:inline-block !important;}
-	
-	$width: 0%;
-	@for $i from 0 through 100 { &.xs#{$i}{ flex-basis:$width+$i; }}
+	.flex-row {
+		&.xs-center { align-items: center;justify-content: center; }
+		&.xs-horizontal-center { justify-content: center; }
+		&.xs-vertical-center { align-items: center; }
+		&.xs-stretch { justify-content: stretch; }
+		&.xs-left { justify-content: flex-start; }
+		&.xs-right { justify-content: flex-end; }
+		&.xs-top { align-items: flex-start; }
+		&.xs-bottom { align-items: flex-end; }
+
+		.item { $width: 0%; min-height: 1px;
+			&.xs-hide { display:none !important; }
+			&.xs-show { display:block !important; }
+
+			@for $i from 0 through 100 { &.xs-#{$i}{ flex: 0 0 $width+$i; }}
+
+			@for $i from 0 through 15 { &.xs-order-#{$i}{ order: $i; }}
+
+			&.xs-top { align-self: flex-start; }
+			&.xs-bottom { align-self: flex-end; }
+			&.xs-center { align-self: center; }
+			&.xs-stretch { align-self: stretch; }
+		}
+	}
 }
 
 @media (min-width:$sm_from) and (max-width: $sm_to) {
-    .hide-s{display:none !important;}
-    .show-s{display:block !important;}
-    .show-inline-s{display:inline !important;}
-	.show-inline-s{display:inline-block !important;}
-	
-	$width: 0%;
-    @for $i from 0 through 100 { &.sm#{$i}{ flex-basis:$width+$i; }}
+	.flex-row {
+		&.sm-center { align-items: center;justify-content: center; }
+		&.sm-horizontal-center { justify-content: center; }
+		&.sm-vertical-center { align-items: center; }
+		&.sm-stretch { justify-content: stretch; }
+		&.sm-left { justify-content: flex-start; }
+		&.sm-right { justify-content: flex-end; }
+		&.sm-top { align-items: flex-start; }
+		&.sm-bottom { align-items: flex-end; }
+
+		.item { $width: 0%; min-height: 1px;
+			&.sm-hide { display:none !important; }
+			&.sm-show { display:block !important; }
+
+			@for $i from 0 through 100 { &.sm-#{$i}{ flex: 0 0 $width+$i; }}
+
+			@for $i from 0 through 15 { &.sm-order-#{$i}{ order: $i; }}
+
+			&.sm-top { align-self: flex-start; }
+			&.sm-bottom { align-self: flex-end; }
+			&.sm-center { align-self: center; }
+			&.sm-stretch { align-self: stretch; }
+		}
+	}
 }
 
 @media (min-width:$md_from) and (max-width: $md_to) {
-	.hide-m{display:none !important;}
-	.show-m{display:block !important;}
-	.show-inline-m{display:inline !important;}
-	.show-inline-m{display:inline-block !important;}
-	
-	$width: 0%;
-	@for $i from 0 through 100 { &.md#{$i}{ flex-basis:$width+$i; }}
+	.flex-row {
+		&.md-center { align-items: center;justify-content: center; }
+		&.md-horizontal-center { justify-content: center; }
+		&.md-vertical-center { align-items: center; }
+		&.md-stretch { justify-content: stretch; }
+		&.md-left { justify-content: flex-start; }
+		&.md-right { justify-content: flex-end; }
+		&.md-top { align-items: flex-start; }
+		&.md-bottom { align-items: flex-end; }
+
+		.item { $width: 0%; min-height: 1px;
+			&.md-hide { display:none !important; }
+			&.md-show { display:block !important; }
+
+			@for $i from 0 through 100 { &.md-#{$i}{ flex: 0 0 $width+$i; }}
+
+			@for $i from 0 through 15 { &.md-order-#{$i}{ order: $i; }}
+
+			&.md-top { align-self: flex-start; }
+			&.md-bottom { align-self: flex-end; }
+			&.md-center { align-self: center; }
+			&.md-stretch { align-self: stretch; }
+		}
+	}
 }
 
 @media (min-width: $lg_from) and (max-width: $lg_to) {
-	.hide-l{display:none !important;}
-	.show-l{display:block !important;}
-	.show-inline-l{display:inline !important;}
-	.show-inline-l{display:inline-block !important;}
-	
-	$width: 0%;
-	@for $i from 0 through 100 { &.xl#{$i}{ flex-basis:$width+$i; }}
+	.flex-row {
+		&.lg-center { align-items: center;justify-content: center; }
+		&.lg-horizontal-center { justify-content: center; }
+		&.lg-vertical-center { align-items: center; }
+		&.lg-stretch { justify-content: stretch; }
+		&.lg-left { justify-content: flex-start; }
+		&.lg-right { justify-content: flex-end; }
+		&.lg-top { align-items: flex-start; }
+		&.lg-bottom { align-items: flex-end; }
+
+		.item { $width: 0%; min-height: 1px;
+			&.lg-hide { display:none !important; }
+			&.lg-show { display:block !important; }
+
+			@for $i from 0 through 100 { &.lg-#{$i}{ flex: 0 0 $width+$i; }}
+
+			@for $i from 0 through 15 { &.lg-order-#{$i}{ order: $i; }}
+
+			&.lg-top { align-self: flex-start; }
+			&.lg-bottom { align-self: flex-end; }
+			&.lg-center { align-self: center; }
+			&.lg-stretch { align-self: stretch; }
+		}
+	}
 }
 
 @media (min-width: $xl_from) {
-	.hide-xl{display:none !important;}
-	.show-xl{display:block !important;}
-	.show-inline-xl{display:inline !important;}
-	.show-inline-xl{display:inline-block !important;}
-	
-	$width: 0%;
-	@for $i from 0 through 100 { .xl#{$i}{width:$width+$i} }
+	.flex-row {
+		&.xl-center { align-items: center;justify-content: center; }
+		&.xl-horizontal-center { justify-content: center; }
+		&.xl-vertical-center { align-items: center; }
+		&.xl-stretch { justify-content: stretch; }
+		&.xl-left { justify-content: flex-start; }
+		&.xl-right { justify-content: flex-end; }
+		&.xl-top { align-items: flex-start; }
+		&.xl-bottom { align-items: flex-end; }
+
+		.item { $width: 0%; min-height: 1px;
+			&.xl-hide { display:none !important; }
+			&.xl-show { display:block !important; }
+
+			@for $i from 0 through 100 { &.xl-#{$i}{ flex: 0 0 $width+$i; }}
+
+			@for $i from 0 through 15 { &.xl-order-#{$i}{ order: $i; }}
+
+			&.xl-top { align-self: flex-start; }
+			&.xl-bottom { align-self: flex-end; }
+			&.xl-center { align-self: center; }
+			&.xl-stretch { align-self: stretch; }
+		}
+	}
 }
 
 
