@@ -1,7 +1,7 @@
 
 
 
-$gutter: 0;
+$gutter: 15px; // Optional
 
 
 
@@ -91,11 +91,11 @@ $sm_from:  500px;	$sm_to:  768px;
 		@for $i from 0 through 100 { &.xl-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
 
 		// Generate fallback order classes -------------
-		@for $i from 0 through 15 { &.xs-order-#{$i}{ order: $i; }}
-		@for $i from 0 through 15 { &.sm-order-#{$i}{ order: $i; }}
-		@for $i from 0 through 15 { &.md-order-#{$i}{ order: $i; }}
-		@for $i from 0 through 15 { &.lg-order-#{$i}{ order: $i; }}
-		@for $i from 0 through 15 { &.xl-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 5 { &.xs-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 5 { &.sm-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 5 { &.md-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 5 { &.lg-order-#{$i}{ order: $i; }}
+		@for $i from 0 through 5 { &.xl-order-#{$i}{ order: $i; }}
 
 		// Fallback self positioning classes -------------
 		&.xs-top     { align-self: flex-start; }
@@ -153,7 +153,7 @@ $sm_from:  500px;	$sm_to:  768px;
 			@for $i from 0 through 100 { &.xs-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
 
 			// Generates orders -------------
-			@for $i from 0 through 15 { &.xs-order-#{$i}{ order: $i; }}
+			@for $i from 0 through 5 { &.xs-order-#{$i}{ order: $i; }}
 
 			// Size specific self-positioning -------------
 			&.xs-top     { align-self: flex-start; }
@@ -187,7 +187,7 @@ $sm_from:  500px;	$sm_to:  768px;
 			@for $i from 0 through 100 { &.sm-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
 
 			// Generates orders -------------
-			@for $i from 0 through 15 { &.sm-order-#{$i}{ order: $i; }}
+			@for $i from 0 through 5 { &.sm-order-#{$i}{ order: $i; }}
 
 			// Size specific self-positioning -------------
 			&.sm-top     { align-self: flex-start; }
@@ -221,7 +221,7 @@ $sm_from:  500px;	$sm_to:  768px;
 			@for $i from 0 through 100 { &.md-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
 
 			// Generates orders -------------
-			@for $i from 0 through 15 { &.md-order-#{$i}{ order: $i; }}
+			@for $i from 0 through 5 { &.md-order-#{$i}{ order: $i; }}
 
 			// Size specific self-positioning -------------
 			&.md-top     { align-self: flex-start; }
@@ -255,7 +255,7 @@ $sm_from:  500px;	$sm_to:  768px;
 			@for $i from 0 through 100 { &.lg-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
 
 			// Generates orders -------------
-			@for $i from 0 through 15 { &.lg-order-#{$i}{ order: $i; }}
+			@for $i from 0 through 5 { &.lg-order-#{$i}{ order: $i; }}
 
 			// Size specific self-positioning -------------
 			&.lg-top     { align-self: flex-start; }
@@ -289,7 +289,7 @@ $sm_from:  500px;	$sm_to:  768px;
 			@for $i from 0 through 100 { &.xl-#{$i}{ flex: 0 0 $width+$i; padding: $gutter; }}
 
 			// Generates orders -------------
-			@for $i from 0 through 15 { &.xl-order-#{$i}{ order: $i; }}
+			@for $i from 0 through 5 { &.xl-order-#{$i}{ order: $i; }}
 
 			// Size specific self-positioning -------------
 			&.xl-top     { align-self: flex-start; }
