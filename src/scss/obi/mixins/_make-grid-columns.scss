@@ -1,0 +1,64 @@
+@mixin make-grid-columns() {
+  %prep-column {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: ($gutter / 2);
+    padding-left: ($gutter / 2);
+  }
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $prefix: breakpoint-prefix($breakpoint);
+
+    @for $i from 1 through $columns {
+      .#{$prefix}col-#{$i} {
+        @extend %prep-column;
+      }
+    }
+
+    .#{$prefix}col,
+    .#{$prefix}col-auto {
+      @extend %prep-column;
+    }
+
+    @include media-breakpoint-up($breakpoint) {
+      .#{$prefix}col {
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+
+      .#{$prefix}col-auto {
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+      }
+
+      @for $size from 1 through $columns {
+        .#{$prefix}col-#{$size} {
+          @include make-col($size);
+        }
+
+        .#{$prefix}order-#{$size} {
+          order: $size;
+        }
+      }
+
+      @for $size from 0 through ($columns - 1) {
+        @if not ($size == 0) {
+          .#{$prefix}offset-#{$size} {
+            @include make-col-offset($size);
+          }
+        }
+      }
+
+      .#{$prefix}order-first {
+        order: -1;
+      }
+
+      .#{$prefix}order-last {
+        order: $columns + 1;
+      }
+    }
+  }
+}

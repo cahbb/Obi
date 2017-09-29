@@ -1,8 +1,5 @@
-# Obi #
-Obi / CSS3 Flexbox based light-weight CSS-framework, supported by the magic Flexbox offers.
+# Obi :zap: WIP :gem:
 
+`obi.min.css (13 KB)`
 
-development in progress … 
-EPIC
-
-
+:rocket:

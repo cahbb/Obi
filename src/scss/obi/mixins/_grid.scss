@@ -1,0 +1,47 @@
+@mixin make-container() {
+    width: 100%;
+    padding-right: $gutter / 2;
+    padding-left: $gutter / 2;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@mixin make-row() {
+  display: flex;
+  flex-flow: row wrap;
+  margin-right: ($gutter / -2);
+  margin-left: ($gutter / -2);
+
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+
+  &.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+
+    > .col,
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}
+
+@mixin make-col-ready() {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: ($gutter / 2);
+  padding-left: ($gutter / 2);
+}
+
+@mixin make-col($size) {
+  flex: 0 0 percentage($size / $columns);
+  max-width: percentage($size / $columns);
+}
+
+@mixin make-col-offset($size) {
+  $num: $size / $columns;
+  margin-left: if($num == 0, 0, percentage($num));
+}
