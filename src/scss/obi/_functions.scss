@@ -1,0 +1,19 @@
+@function breakpoint-next($prefix) {
+  $breakpoint-names: map-keys($breakpoints);
+  $prefix-index: index($breakpoint-names, $prefix);
+  @return if($prefix-index < length($breakpoint-names), nth($breakpoint-names, $prefix-index + 1), null);
+}
+
+@function breakpoint-min($prefix) {
+  $min: map-get($breakpoints, $prefix);
+  @return if($min != 0, $min, null);
+}
+
+@function breakpoint-max($prefix) {
+  $next-prefix: breakpoint-next($prefix);
+  @return if($next-prefix, breakpoint-min($next-prefix) - 1px, null);
+}
+
+@function breakpoint-prefix($prefix) {
+  @return if(breakpoint-min($prefix) == null, "", "#{$prefix}-");
+}

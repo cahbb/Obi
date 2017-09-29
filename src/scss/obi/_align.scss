@@ -1,0 +1,87 @@
+@if $enable-align {
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $prefix: breakpoint-prefix($breakpoint);
+
+    @include media-breakpoint-up($breakpoint) {
+      .#{$prefix}top {
+        align-items: flex-start;
+        align-content: flex-start;
+      }
+
+      .#{$prefix}right {
+        justify-content: flex-end;
+      }
+
+      .#{$prefix}bottom {
+        align-items: flex-end;
+        align-content: flex-end;
+      }
+
+      .#{$prefix}left {
+        justify-content: flex-start;
+      }
+
+      .#{$prefix}center {
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .#{$prefix}stretch {
+        align-items: stretch;
+        align-content: stretch;
+      }
+
+      .#{$prefix}main-x-center {
+        justify-content: center;
+      }
+
+      .#{$prefix}main-x-space-around {
+        justify-content: space-around;
+      }
+
+      .#{$prefix}main-x-space-between {
+        justify-content: space-between;
+      }
+
+      .#{$prefix}cross-x-center {
+        align-items: center; align-content: center;
+      }
+
+      .#{$prefix}cross-x-space-around {
+        align-content: space-around;
+      }
+
+      .#{$prefix}cross-x-space-between {
+        align-content: space-between;
+      }
+
+      .#{$prefix}self-top {
+        align-self: flex-start;
+      }
+
+      .#{$prefix}self-right {
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .#{$prefix}self-bottom {
+        align-self: flex-end;
+      }
+
+      .#{$prefix}self-left {
+        margin-right: auto;
+        margin-left: 0;
+      }
+
+      .#{$prefix}self-center {
+        align-self: center;
+      }
+
+      .#{$prefix}self-stretch {
+        align-self: stretch;
+      }
+    }
+  }
+}
