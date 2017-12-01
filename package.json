@@ -3,18 +3,21 @@
   "version": "1.0.0",
   "description": "Obi Flexbox based light-weight grid framework",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cahbb/Obi.git"
   },
   "keywords": [
-    "framework"
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "framework",
+    "web"
   ],
   "author": "cahbb",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/cahbb/Obi",
   "devDependencies": {
     "browser-sync": "^2.18.13",
