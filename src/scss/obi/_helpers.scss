@@ -8,11 +8,11 @@
     $prefix: breakpoint-prefix($breakpoint);
 
     @include media-breakpoint-up($breakpoint) {
-      .hidden#{$prefix} {
+      .#{$prefix}hidden {
         display: none !important;
       }
 
-      .visible#{$prefix} {
+      .#{$prefix}visible {
         display: block !important;
       }
     }

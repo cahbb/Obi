@@ -1,0 +1,88 @@
+@if $enable-align {
+
+  @each $breakpoint in map-keys($breakpoints) {
+    $prefix: breakpoint-prefix($breakpoint);
+
+    @include media-breakpoint-up($breakpoint) {
+      .#{$prefix}top {
+        align-items: flex-start !important;
+        align-content: flex-start !important;
+      }
+
+      .#{$prefix}right {
+        justify-content: flex-end !important;
+      }
+
+      .#{$prefix}bottom {
+        align-items: flex-end !important;
+        align-content: flex-end !important;
+      }
+
+      .#{$prefix}left {
+        justify-content: flex-start !important;
+      }
+
+      .#{$prefix}center {
+        align-items: center !important;
+        align-content: center !important;
+        justify-content: center !important;
+      }
+
+      .#{$prefix}stretch {
+        align-items: stretch !important;
+        align-content: stretch !important;
+      }
+
+      .#{$prefix}main-x-center {
+        justify-content: center !important;
+      }
+
+      .#{$prefix}main-x-space-around {
+        justify-content: space-around !important;
+      }
+
+      .#{$prefix}main-x-space-between {
+        justify-content: space-between !important;
+      }
+
+      .#{$prefix}cross-x-center {
+        align-items: center !important;
+        align-content: center !important;
+      }
+
+      .#{$prefix}cross-x-space-around {
+        align-content: space-around !important;
+      }
+
+      .#{$prefix}cross-x-space-between {
+        align-content: space-between !important;
+      }
+
+      .#{$prefix}self-top {
+        align-self: flex-start !important;
+      }
+
+      .#{$prefix}self-right {
+        margin-left: auto !important;
+        margin-right: 0 !important;
+      }
+
+      .#{$prefix}self-bottom {
+        align-self: flex-end !important;
+      }
+
+      .#{$prefix}self-left {
+        margin-right: auto !important;
+        margin-left: 0 !important;
+      }
+
+      .#{$prefix}self-center {
+        align-self: center !important;
+      }
+
+      .#{$prefix}self-stretch {
+        align-self: stretch !important;
+      }
+    }
+  }
+}
