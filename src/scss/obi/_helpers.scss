@@ -15,6 +15,10 @@
       .visible#{$postfix} {
         display: block !important;
       }
+
+      .visible-flex#{$postfix} {
+        display: flex !important;
+      }
     }
   }
 }
