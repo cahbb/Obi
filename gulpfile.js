@@ -15,7 +15,7 @@ gulp.task('css', function() {
   return gulp.src('src/scss/obi/obi.scss')
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
     .pipe(autoprefixer({
-        browsers: ['last 2 versions','safari 5','ie 8','ie 9','opera 12.1','ios 6','android 4'],
+        browsers: ['last 2 versions'],
         cascade: false
     }))
     .pipe(gulp.dest('dist/css'))
