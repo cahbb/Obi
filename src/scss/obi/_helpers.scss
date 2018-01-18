@@ -8,17 +8,9 @@
     $postfix: breakpoint-postfix($breakpoint);
 
     @include media-breakpoint-up($breakpoint) {
-      .hidden#{$postfix} {
-        display: none !important;
-      }
-
-      .visible#{$postfix} {
-        display: block !important;
-      }
-
-      .visible-flex#{$postfix} {
-        display: flex !important;
-      }
+      .hidden#{$postfix} { display: none !important; }
+      .visible#{$postfix} { display: block !important; }
+      .visible-flex#{$postfix} { display: flex !important; }
     }
   }
 }
