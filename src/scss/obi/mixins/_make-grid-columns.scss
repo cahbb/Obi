@@ -8,55 +8,55 @@
   }
 
   @each $breakpoint in map-keys($breakpoints) {
-    $prefix: breakpoint-prefix($breakpoint);
+    $postfix: breakpoint-postfix($breakpoint);
 
     @for $i from 1 through $columns {
-      .#{$prefix}col-#{$i} {
+      .col-#{$i}#{$postfix} {
         @extend %prep-column;
       }
     }
 
-    .#{$prefix}col,
-    .#{$prefix}col-auto {
+    .col#{$postfix},
+    .col-auto#{$postfix} {
       @extend %prep-column;
     }
 
     @include media-breakpoint-up($breakpoint) {
-      .#{$prefix}col {
+      .col#{$postfix} {
         flex-basis: 0;
         flex-grow: 1;
         max-width: 100%;
       }
 
-      .#{$prefix}col-auto {
+      .col-auto#{$postfix} {
         flex: 0 0 auto;
         width: auto;
         max-width: none;
       }
 
       @for $size from 1 through $columns {
-        .#{$prefix}col-#{$size} {
+        .col-#{$size}#{$postfix} {
           @include make-col($size);
         }
 
-        .#{$prefix}order-#{$size} {
+        .order-#{$size}#{$postfix} {
           order: $size;
         }
       }
 
       @for $size from 0 through ($columns - 1) {
         @if not ($size == 0) {
-          .#{$prefix}offset-#{$size} {
+          .offset-#{$size}#{$postfix} {
             @include make-col-offset($size);
           }
         }
       }
 
-      .#{$prefix}order-first {
+      .order-first#{$postfix} {
         order: -1;
       }
 
-      .#{$prefix}order-last {
+      .order-last#{$postfix} {
         order: $columns + 1;
       }
     }

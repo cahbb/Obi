@@ -5,14 +5,14 @@
   }
 
   @each $breakpoint in map-keys($breakpoints) {
-    $prefix: breakpoint-prefix($breakpoint);
+    $postfix: breakpoint-postfix($breakpoint);
 
     @include media-breakpoint-up($breakpoint) {
-      .#{$prefix}hidden {
+      .hidden#{$postfix} {
         display: none !important;
       }
 
-      .#{$prefix}visible {
+      .visible#{$postfix} {
         display: block !important;
       }
     }
