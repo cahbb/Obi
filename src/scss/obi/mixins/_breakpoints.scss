@@ -1,5 +1,5 @@
-@mixin media-breakpoint-up($prefix) {
-  $min: breakpoint-min($prefix);
+@mixin media-breakpoint-up($postfix) {
+  $min: breakpoint-min($postfix);
   @if $min {
     @media (min-width: $min) {
       @content;
@@ -9,8 +9,8 @@
   }
 }
 
-@mixin media-breakpoint-down($prefix) {
-  $max: breakpoint-max($prefix);
+@mixin media-breakpoint-down($postfix) {
+  $max: breakpoint-max($postfix);
   @if $max {
     @media (max-width: $max) {
       @content;
@@ -39,20 +39,20 @@
   }
 }
 
-@mixin media-breakpoint-only($prefix) {
-  $min: breakpoint-min($prefix);
-  $max: breakpoint-max($prefix);
+@mixin media-breakpoint-only($postfix) {
+  $min: breakpoint-min($postfix);
+  $max: breakpoint-max($postfix);
 
   @if $min != null and $max != null {
     @media (min-width: $min) and (max-width: $max) {
       @content;
     }
   } @else if $max == null {
-    @include media-breakpoint-up($prefix) {
+    @include media-breakpoint-up($postfix) {
       @content;
     }
   } @else if $min == null {
-    @include media-breakpoint-down($prefix) {
+    @include media-breakpoint-down($postfix) {
       @content;
     }
   }

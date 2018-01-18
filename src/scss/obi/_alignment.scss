@@ -1,86 +1,86 @@
 @if $enable-align {
 
   @each $breakpoint in map-keys($breakpoints) {
-    $prefix: breakpoint-prefix($breakpoint);
+    $postfix: breakpoint-postfix($breakpoint);
 
     @include media-breakpoint-up($breakpoint) {
-      .#{$prefix}top {
+      .top#{$postfix} {
         align-items: flex-start !important;
         align-content: flex-start !important;
       }
 
-      .#{$prefix}right {
+      .right#{$postfix} {
         justify-content: flex-end !important;
       }
 
-      .#{$prefix}bottom {
+      .bottom#{$postfix}{
         align-items: flex-end !important;
         align-content: flex-end !important;
       }
 
-      .#{$prefix}left {
+      .left#{$postfix} {
         justify-content: flex-start !important;
       }
 
-      .#{$prefix}center {
+      .center#{$postfix} {
         align-items: center !important;
         align-content: center !important;
         justify-content: center !important;
       }
 
-      .#{$prefix}stretch {
+      .stretch#{$postfix} {
         align-items: stretch !important;
         align-content: stretch !important;
       }
 
-      .#{$prefix}main-x-center {
+      .main-x-center#{$postfix} {
         justify-content: center !important;
       }
 
-      .#{$prefix}main-x-space-around {
+      .main-x-space-around#{$postfix} {
         justify-content: space-around !important;
       }
 
-      .#{$prefix}main-x-space-between {
+      .main-x-space-between#{$postfix} {
         justify-content: space-between !important;
       }
 
-      .#{$prefix}cross-x-center {
+      .cross-x-center#{$postfix} {
         align-items: center !important;
         align-content: center !important;
       }
 
-      .#{$prefix}cross-x-space-around {
+      .cross-x-space-around#{$postfix} {
         align-content: space-around !important;
       }
 
-      .#{$prefix}cross-x-space-between {
+      .cross-x-space-between#{$postfix} {
         align-content: space-between !important;
       }
 
-      .#{$prefix}self-top {
+      .self-top#{$postfix} {
         align-self: flex-start !important;
       }
 
-      .#{$prefix}self-right {
+      .self-right#{$postfix} {
         margin-left: auto !important;
         margin-right: 0 !important;
       }
 
-      .#{$prefix}self-bottom {
+      .self-bottom#{$postfix} {
         align-self: flex-end !important;
       }
 
-      .#{$prefix}self-left {
+      .self-left#{$postfix} {
         margin-right: auto !important;
         margin-left: 0 !important;
       }
 
-      .#{$prefix}self-center {
+      .self-center#{$postfix} {
         align-self: center !important;
       }
 
-      .#{$prefix}self-stretch {
+      .self-stretch#{$postfix} {
         align-self: stretch !important;
       }
     }

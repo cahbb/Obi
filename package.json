@@ -20,7 +20,6 @@
   "license": "MIT",
   "homepage": "https://github.com/cahbb/Obi",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-clean-css": "^2.0.13",
