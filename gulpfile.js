@@ -1,29 +1,29 @@
 'use strict'
-
 var gulp = require('gulp')
 var rename = require('gulp-rename')
 var sass = require('gulp-sass')
-var cleanCSS = require('gulp-clean-css')
 var rimraf = require('gulp-rimraf')
-var autoprefixer = require('gulp-autoprefixer')
+var postcss = require('gulp-postcss')
+var autoprefixer = require('autoprefixer')
+var cssnano = require('cssnano')
 
 /*========================================
   SASS-CSS
 ========================================*/
 
 gulp.task('css', function() {
+  var plugins = [
+    autoprefixer({browsers: ['last 2 versions','> 1%','safari 5','ie 8','ie 9','opera 12.1','ios 6','android 4']}),
+    cssnano()
+  ]
+
   return gulp.src('src/scss/obi/obi.scss')
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-    .pipe(autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-    }))
     .pipe(gulp.dest('dist/css'))
-    .pipe(cleanCSS())
+    .pipe(postcss(plugins))
     .pipe(rename('obi.min.css'))
     .pipe(gulp.dest('dist/css'))
 })
-
 
 /*========================================
   TASKS
