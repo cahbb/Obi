@@ -19,10 +19,10 @@ gulp.task('css', function() {
 
   return gulp.src('src/scss/obi/obi.scss')
     .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('dist'))
     .pipe(postcss(plugins))
     .pipe(rename('obi.min.css'))
-    .pipe(gulp.dest('dist/css'))
+    .pipe(gulp.dest('dist'))
 })
 
 /*========================================
